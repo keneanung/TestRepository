@@ -10,11 +10,13 @@ if [ "$TRAVIS_REPO_SLUG" != "keneanung/TestRepository" ]; then
   exit 0
 fi
 
+mainDirectory=`pwd`
+
 cd ..
 git clone --quiet --branch=gh-pages "https://keneanung:${GH_TOKEN}@github.com/keneanung/TestRepository.git" gh-pages 
 
 cd gh-pages/downloads
-cp "$TRAVIS_BUILD_DIR/mudlet-mapper.xml" .
+cp "$mainDirectory/mudlet-mapper.xml" .
 
 datePart=$(date +"%y.%-m")
 lastDatePart=$(echo "$(cat version 3> /dev/null)" | grep -o "^[0-9]*\.[0-9]*")
