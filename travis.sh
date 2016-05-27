@@ -1,5 +1,4 @@
 #!/bin/bash
-set -o errexit
 
 if [ "$TRAVIS_BRANCH" != "master" -o "$TRAVIS_PULL_REQUEST" != "false" ]; then
   echo "Not on master, aborting"
