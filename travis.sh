@@ -32,4 +32,4 @@ git config user.name "Travis"
 
 git commit -m"Release new version" .
 
-git push
+git push --quiet
