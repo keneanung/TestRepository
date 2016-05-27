@@ -12,7 +12,7 @@ if [ "$TRAVIS_REPO_SLUG" != "keneanung/TestRepository" ]; then
 fi
 
 cd ..
-git clone --quiet --branch=gh-pages "https://keneanung:$GH_TOKEN@github.com/keneanung/TestRepository.git" gh-pages > /dev/null
+git clone --quiet --branch=gh-pages "https://keneanung:${GH_TOKEN}@github.com/keneanung/TestRepository.git" gh-pages 
 
 cd gh-pages/downloads
 cp "$TRAVIS_BUILD_DIR/mudlet-mapper.xml" .
