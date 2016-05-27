@@ -20,10 +20,8 @@ datePart=$(date +"%y.%-m")
 lastDatePart=$(echo "$(cat version 3> /dev/null)" | grep -o "^[0-9]*\.[0-9]*")
 if [ "$lastDatePart" = "$datePart" ]; then
   versionPart=$(($(cat version | grep -o "[0-9]*$") + 1))
-  echo "matched" 
 else
   versionPart=1
-  echo "not" 
 fi
 version="$datePart.$versionPart"
 sed -rbe 's/local newversion = &quot;developer&quot;/local newversion = \&quot;'$version'\&quot;/g' mudlet-mapper.xml > mudlet-mapper.xml.tmp && mv mudlet-mapper.xml.tmp mudlet-mapper.xml
